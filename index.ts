@@ -11,7 +11,7 @@ async function fireCdpCommand(command: string, params: Record<string, unknown>):
   });
 }
 
-interface Position {
+interface _Position {
   x: number;
   y: number;
 }
@@ -21,7 +21,7 @@ function getPositionedCoordinates(
   y0: number,
   width: number,
   height: number,
-  position: Position,
+  position: _Position,
   frameScale: number,
 ) {
   const { x, y } = position;
@@ -93,7 +93,7 @@ function getElementPositionXY(htmlElement: HTMLElement) {
  * @param jqueryEl the element to introspect
  * @param position the position of the event interaction on the element
  */
-function getCypressElementCoordinates(jqueryEl: JQuery, position: Position) {
+function getCypressElementCoordinates(jqueryEl: JQuery, position: _Position) {
   const htmlElement = jqueryEl.get(0);
   const cypressAppFrame = window.parent.document.querySelector('iframe');
 
